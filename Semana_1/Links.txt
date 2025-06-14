@@ -1,0 +1,2 @@
+Ícones: https://ionic.io/ionicons
+Verificar: https://caniuse.com/

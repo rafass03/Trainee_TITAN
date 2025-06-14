@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*todas as propriedades de tamanho (width, height, padding, border)
+    serão calculadas com base no conteúdo*/
+}
+
+:root{
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+    /* background: color image repeat position/size */
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body *{
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+/* Altura é fluida */
+#container{
+    width: 360px;
+    /* border: 1px solid red; */
+    /*margin: auto; somente na esquerda e direita*/
+    margin: 56px auto 0px; /*margem superior de 56px, margem inferior de 0px, margem esquerda e direita automática*/
+    padding: 0 24px; /*padding: 0 24px; (0px em cima e embaixo, 24px nas laterais)*/
+}
+
+/* Profile */
+#profile{
+   text-align: center; /*centraliza o conteúdo do elemento*/
+   padding: 24px;
+}
+
+#profile img{
+    width: 112px;
+}
+
+/* Ou */
+/* Elementos inline não consigo aplicar margin: auto (img é inline)
+#profile img{
+    display: block; /*transforma em bloco, assim consigo aplicar margin: auto (e não aceita o ou anterior)
+    width: 112px;
+    margin: auto;
+}*/
+
+#profile p{
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Switch */
+#switch{
+    position: relative; /*posiciona o switch de forma relativa*/
+    width: 64px; /*largura do switch*/
+    margin: 4px auto; /*margem: 4px auto; (4px em cima e embaixo, margem esquerda e direita automática)*/
+}
+
+#switch button{
+    width: 32px; /*largura do botão*/
+    height: 32px; /*altura do botão*/
+    background: white var(--switch-bg-url) no-repeat center; /*cor de fundo branca com ícone de lua e estrelas*/
+    border: 0; /*remove a borda do botão*/
+    border-radius: 50%; /*borda arredondada para o botão*/
+    
+    position: absolute; /*posiciona o botão de forma absoluta*/
+    top: 50%; /*posiciona o botão no meio do switch verticalmente*/
+    left: 0;
+    z-index: 1; /*coloca o botão acima dos outros elementos*/
+    transform: translateY(-50%); /*move o botão para a esquerda 50% do seu tamanho*/
+}
+
+.light #switch button{
+    right: 0; /*posiciona o botão no lado direito do switch quando em modo claro*/
+    left: initial; /*remove o posicionamento à esquerda*/
+}
+#switch span{
+    display: block; /*transforma o span em bloco*/
+    width: 64px; /*largura do span*/
+    height: 24px; /*altura do span*/
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color); /*borda com cor e opacidade*/
+    backdrop-filter: blur(4px); /*desfoque do fundo*/
+    border-radius: 9999px; /*borda arredondada para o span*/
+}
+
+/* links */
+ul {
+    list-style: none; /*remove os marcadores da lista*/
+    display: flex; /*transforma a lista em flexbox*/
+    flex-direction: column; /*alinha os itens verticalmente*/
+    gap: 16px; /*espaçamento entre os itens da lista*/
+    padding: 24px 0; /*padding: 24px 0; (24px em cima e embaixo, 0px nas laterais)*/
+}
+
+ul li a{
+    display: flex; /*transforma a lista em flexbox*/
+    align-items: center; /*alinha os itens verticalmente no centro*/
+    justify-content: center; /*alinha os itens horizontalmente no centro*/
+    padding: 16px 24px; /*padding: 16px 24px; (16px em cima e embaixo, 24px nas laterais)*/
+    
+    background: var(--surface-color); /*cor de fundo com opacidade*/
+    border: 1px solid var(--stroke-color); /*borda com cor e opacidade*/
+    border-radius: 8px; /*borda arredondada*/
+    backdrop-filter: blur(4px); /*desfoque do fundo*/
+    
+    text-decoration: none; /*remove o sublinhado do link*/
+    font-weight: 500; /*peso da fonte*/
+
+    transition: background 0.2s;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+    background: var(--surface-color-hover); /*altera a cor de fundo ao passar o mouse*/
+    border: 1.5px solid var(--text-color); /*aumenta a espessura da borda ao passar o mouse*/
+}
+
+/* Social Links */
+#social-links{
+    display: flex; /*transforma o container em flexbox*/
+    justify-content: center; /*alinha os itens horizontalmente no centro*/
+    padding: 24px 0; /*padding: 24px 0; (24px em cima e embaixo, 0px nas laterais)*/
+    font-size: 24px; /*tamanho da fonte dos ícones*/
+}
+
+#social-links a{
+    display: flex; /*transforma o link em flexbox*/
+    align-items: center; /*alinha os itens verticalmente no centro*/
+    justify-content: center; /*alinha os itens horizontalmente no centro*/
+    transition: background 0.2s; /*transição suave ao passar o mouse*/
+    padding: 16px; /*padding: 16px; (16px em cima e embaixo, 16px nas laterais)*/
+    border-radius: 50%; /*borda arredondada para os ícones*/
+
+}
+
+#social-links a:hover{
+    background: var(--highlight-color); /*altera a cor de fundo ao passar o mouse*/
+}
+
+footer{
+    padding: 24px 0; /*padding: 24px 0; (24px em cima e embaixo, 0px nas laterais)*/
+    text-align: center; /*centraliza o texto do rodapé*/
+    font-size: 14px; /*tamanho da fonte do rodapé*/
+    text-decoration: none; /*remove o sublinhado do link*/
+}

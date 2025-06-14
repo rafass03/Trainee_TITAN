@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secao 04 - Aula 06</title>
+    </head>
+    <body>
+        <h1>Secao 04 - Aula 06</h1>
+        <script>
+            //Operadores Lógicos
+            var curso = "JavaScript";
+            var legal = true;
+            
+            //AND (e - Ambas as expressões devem ser verdadeiras)
+            if (curso === "JavaScript" && legal === true){
+                console.log("O curso de JavaScript é legal!");
+            }
+            else {
+                console.log("O curso não é de JavaScript ou não é legal.");
+            }
+
+            //OR (ou - Pelo menos umas expressão deve ser verdadeira)
+            if (curso === "JavaScript" || legal === true){
+                console.log("O curso de JavaScript é legal!");
+            }
+            else {
+                console.log("O curso não é de JavaScript ou não é legal.");
+                
+            }
+
+            //NOT (não - quando queremos fazer uma negação ou verificar se algo não é como esperado)
+            if (curso != "JavaScript"){
+                console.log("O curso não é JavaScript!");
+            }
+            else {
+                console.log("O curso é de JavaScript!");
+            }
+        </script>
+    </body>
+</html>
