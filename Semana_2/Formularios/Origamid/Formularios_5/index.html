@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form action="./enviar.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="(21) 99999-9999">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="contato@email.com" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" id="mensagem" placeholder="O que você precisa?"></textarea>
+
+            <button>Enviar</button>
+        </form>
+        <script src="formulario.js"></script>
+    </body>
+</html>

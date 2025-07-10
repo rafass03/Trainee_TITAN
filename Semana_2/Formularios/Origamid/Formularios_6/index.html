@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form name="contato" id="contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="André" placeholder="Seu nome">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="contato@email.com" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" id="mensagem" placeholder="O que você precisa?"></textarea>
+
+            <button>Enviar</button>
+        </form>
+        <span class="texto"></span>
+        <script>
+            const contato = document.querySelector('#contato');
+            const texto = document.querySelector('.texto');
+            // console.log(contato.elements.nome.value);
+            function handleKeyUp(event){
+                console.log(event.target.checkValidity());
+                console.log(event.target.value);
+                texto.innerHTML = event.target.value;
+            }
+            contato.addEventListener('change', handleKeyUp);
+        </script>
+    </body>
+</html>

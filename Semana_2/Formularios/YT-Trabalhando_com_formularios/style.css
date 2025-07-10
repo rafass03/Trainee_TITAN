@@ -1,0 +1,50 @@
+/* 
+Inicio Section
+*/
+.titulo-pagina {
+    color: brown; 
+    font-size: 68px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+.btn-azul {
+    background-color: blue;
+}
+
+.btn-red {
+    background-color: red;
+}
+
+.minha-classe {
+    display: inline-block;
+    padding: 30px;
+    border: solid 3px black;
+    margin: 30px;
+}
+
+.lista-nao-ordenada {
+    list-style: url("img/arrow.svg");
+}
+
+/* Fim section */
+
+.lista-ordenada {
+    list-style: lower-greek;
+}
+
+.tabela {
+    width: 400px;
+}
+
+.tabela, tr, th, td {
+    border: solid 1px black;
+    border-collapse: collapse;
+}
+
+.m-bottom {
+    margin-bottom: 500px;
+}
